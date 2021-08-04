@@ -2,6 +2,11 @@ from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
+from django.urls import reverse_lazy
+from django.views.generic import DeleteView
+
+from articleapp.models import Article
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,
@@ -10,7 +15,6 @@ class Profile(models.Model):
     image = models.ImageField(upload_to='profile/', null=True)
     nickname = models.CharField(max_length=30, unique=True)
     message = models.CharField(max_length=200, null=True)
-
 
 
 
