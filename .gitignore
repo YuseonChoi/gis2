@@ -66,3 +66,6 @@ staticfiles/
 venv/
 
 .env
+
+gis_1ban_gcp
+gis_1ban_gcp.pub
