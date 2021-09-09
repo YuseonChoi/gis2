@@ -16,36 +16,11 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from django.urls import reverse_lazy
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # settings.py의 부모의 부모 ---> 최상위 프로젝트 폴더 경로
-
-
-env_list = dict()
-local_env = open(os.path.join(BASE_DIR, '.env'))
-# 운영체제 관련해서 경로가 들어있는 곳이 PATH
-# 최상위 폴더 안의 .env 파일을 연다.
-
-while True:
-    line = local_env.readline()
-    if not line:
-        break
-    line = line.replace('\n', '')
-    start = line.find('=')
-    key = line[:start]
-    value = line[start+1:]
-    env_list[key] = value
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env_list['SECRET_KEY']
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -106,15 +81,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'gis2.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 
 # Password validation
