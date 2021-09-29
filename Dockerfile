@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo 'dfisfjls'
+RUN echo 'sfafsfsa'
 
 RUN git clone https://github.com/YuseonChoi/gis2.git
 
